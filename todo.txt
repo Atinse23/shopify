@@ -1,3 +1,0 @@
-1. Edit Read Me to contain my details 
-2. Error message for text input if a user clicks enter without putting a text 
-3. Adding logo to the top
