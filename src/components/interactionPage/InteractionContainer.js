@@ -9,7 +9,6 @@ const InteractionContainer = () => {
     //Get data from local storage and set as dialogArea initial data
     let userDialog = JSON.parse(localStorage?.getItem("dialogData"))
     let username = localStorage?.getItem("username")
-    console.log(username)
 
     const [activeButton, setActiveButton] = useState("QA")
     const [loadingState, setLoadingState] = useState(false)
@@ -20,6 +19,8 @@ const InteractionContainer = () => {
     const handleTextInput = (e) => {
         setInput(e.target.value)
     }
+
+    const API_KEY = process.env.REACT_APP_SHOPIFY
 
 
     const addDialog = async () => {
@@ -40,7 +41,7 @@ const InteractionContainer = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer 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`,
+                Authorization: `Bearer ${API_KEY}`,
             },
             body: JSON.stringify(data),
         }).then(response => response.json()).then(data => {
